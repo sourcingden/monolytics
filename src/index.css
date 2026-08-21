@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import "@fontsource-variable/manrope";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/600.css";
+
+/*
+  Dark-terminal-meets-Swiss aesthetic: near-black surfaces, one warm accent, tabular
+  monospace for money. Tokens follow the dataviz skill's validated palette (see
+  src/ui/chartColors.ts for the categorical ramp) so chart colors and chrome never clash.
+  Dark-only for v1 — see plan.
+*/
+@theme {
+  --font-sans: 'Manrope Variable', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+
+  --color-bg: #0d0d0d;
+  --color-surface: #17171a;
+  --color-surface-2: #202023;
+  --color-line: #2c2c2f;
+  --color-line-strong: #3a3a3e;
+  --color-ink: #ffffff;
+  --color-ink-dim: #c3c2b7;
+  --color-muted: #8a8983;
+
+  --color-accent: #c9a24c;
+  --color-accent-ink: #1a1408;
+
+  --color-good: #0ca30c;
+  --color-notice: #fab219;
+  --color-warning: #ec835a;
+  --color-critical: #d03b3b;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-accent) 35%, transparent);
+}
+
+/* Money and other tabular figures — set explicitly where needed via font-mono + tabular-nums. */
+.font-tabular {
+  font-variant-numeric: tabular-nums;
+}

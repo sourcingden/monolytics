@@ -1,0 +1,93 @@
+[
+  { "_comment": "Ordered list — first match wins. `pattern` is a case-insensitive regex source matched against the transaction description. This is the highest-leverage file in the app without an AI fallback: extend it aggressively as real 'Не визначено' merchants come in." },
+  { "_comment": "\\b (word boundary) is ASCII-only in JS regex — even with /u it never fires next to a Cyrillic letter. Never wrap a Cyrillic pattern in \\b; it's fine on Latin ones." },
+
+  { "pattern": "с[іi]льпо|silpo", "merchant": "Сільпо", "category": "food.groceries" },
+  { "pattern": "атб|\\batb\\b", "merchant": "АТБ", "category": "food.groceries" },
+  { "pattern": "novus", "merchant": "NOVUS", "category": "food.groceries" },
+  { "pattern": "varus", "merchant": "VARUS", "category": "food.groceries" },
+  { "pattern": "ашан|auchan", "merchant": "Ашан", "category": "food.groceries" },
+  { "pattern": "фора", "merchant": "Фора", "category": "food.groceries" },
+  { "pattern": "вельмарт|велмарт|velmart", "merchant": "Велмарт", "category": "food.groceries" },
+  { "pattern": "м[іi]кс ?март", "merchant": "Мікс Март", "category": "food.groceries" },
+  { "pattern": "\\bmetro\\b", "merchant": "Metro", "category": "food.groceries" },
+  { "pattern": "produkt", "merchant": "Продукти", "category": "food.groceries" },
+  { "pattern": "дари ?моря", "merchant": "Дари Моря", "category": "food.groceries" },
+
+  { "pattern": "аврора|avrora", "merchant": "Аврора", "category": "shopping.clothes" },
+  { "pattern": "humana", "merchant": "Humana", "category": "shopping.clothes" },
+  { "pattern": "баул|\\bbaul\\b", "merchant": "Баул", "category": "shopping.clothes" },
+  { "pattern": "shop ?brend", "merchant": "Shop Brend", "category": "shopping.clothes" },
+  { "pattern": "restart", "merchant": "Restart", "category": "shopping.clothes" },
+  { "pattern": "not draging", "merchant": "Not Draging", "category": "shopping.clothes" },
+  { "pattern": "econom", "merchant": "Економ", "category": "shopping.clothes" },
+
+  { "pattern": "aroma ?kava", "merchant": "Aroma Kava", "category": "food.coffee" },
+  { "pattern": "artkava", "merchant": "Artkava", "category": "food.coffee" },
+  { "pattern": "boomerang ?coffee", "merchant": "Boomerang Coffee", "category": "food.coffee" },
+  { "pattern": "fishki ?coffee", "merchant": "Fishki Coffee", "category": "food.coffee" },
+  { "pattern": "fastkava", "merchant": "Fastkava", "category": "food.coffee" },
+  { "pattern": "kavalover", "merchant": "KavaLover", "category": "food.coffee" },
+  { "pattern": "coffeetut", "merchant": "CoffeeTut", "category": "food.coffee" },
+  { "pattern": "khaipova ?kava", "merchant": "Хайпова Кава", "category": "food.coffee" },
+  { "pattern": "octobakery", "merchant": "Octobakery", "category": "food.coffee" },
+  { "pattern": "coffeereligia", "merchant": "Coffeereligia", "category": "food.coffee" },
+  { "pattern": "\\bkava\\b|\\bcoffee\\b|\\bkafe\\b|\\bcafe\\b", "merchant": "Кав'ярня", "category": "food.coffee" },
+
+  { "pattern": "mcdonald", "merchant": "McDonald's", "category": "food.cafe" },
+  { "pattern": "glovo", "merchant": "Glovo", "category": "food.delivery" },
+  { "pattern": "bolt ?food", "merchant": "Bolt Food", "category": "food.delivery" },
+  { "pattern": "raketa", "merchant": "Ракета", "category": "food.delivery" },
+
+  { "pattern": "\\be-?zoo\\b", "merchant": "E-Zoo", "category": "pets" },
+  { "pattern": "masterzoo", "merchant": "MasterZoo", "category": "pets" },
+  { "pattern": "zooliuks|zooluks", "merchant": "Zooluks", "category": "pets" },
+  { "pattern": "зоомагазин", "merchant": "Зоомагазин", "category": "pets" },
+  { "pattern": "\\bvet\\b|ветклін", "merchant": "Ветклініка", "category": "pets" },
+
+  { "pattern": "\\bwog\\b", "merchant": "WOG", "category": "transport.fuel" },
+  { "pattern": "окко|\\bokko\\b", "merchant": "OKKO", "category": "transport.fuel" },
+  { "pattern": "\\bamic\\b", "merchant": "Amic", "category": "transport.fuel" },
+  { "pattern": "\\bupg\\b", "merchant": "UPG", "category": "transport.fuel" },
+  { "pattern": "socar", "merchant": "Socar", "category": "transport.fuel" },
+
+  { "pattern": "uklon", "merchant": "Uklon", "category": "transport.taxi" },
+  { "pattern": "\\buber\\b", "merchant": "Uber", "category": "transport.taxi" },
+  { "pattern": "\\bbolt\\b(?! ?food)", "merchant": "Bolt", "category": "transport.taxi" },
+
+  { "pattern": "нова ?пошта|nova ?po[sš]hta", "merchant": "Нова пошта", "category": "shopping.home" },
+  { "pattern": "укрпошта|ukrposhta", "merchant": "Укрпошта", "category": "shopping.home" },
+
+  { "pattern": "аптека", "merchant": "Аптека", "category": "health.pharmacy" },
+  { "pattern": "express ?pharm", "merchant": "Express Pharm", "category": "health.pharmacy" },
+  { "pattern": "анц", "merchant": "АНЦ", "category": "health.pharmacy" },
+  { "pattern": "medservice", "merchant": "Medservice", "category": "health.doctors" },
+
+  { "pattern": "rozetka", "merchant": "Rozetka", "category": "shopping.electronics" },
+  { "pattern": "\\bbrain\\b", "merchant": "Brain", "category": "shopping.electronics" },
+  { "pattern": "foxtrot", "merchant": "Foxtrot", "category": "shopping.electronics" },
+  { "pattern": "comfy", "merchant": "Comfy", "category": "shopping.electronics" },
+  { "pattern": "\\bmoyo\\b", "merchant": "MOYO", "category": "shopping.electronics" },
+  { "pattern": "jysk", "merchant": "JYSK", "category": "housing.repair" },
+  { "pattern": "еп[іi]центр|epicentr", "merchant": "Епіцентр", "category": "housing.repair" },
+
+  { "pattern": "\\bapple\\b|\\bitunes\\b", "merchant": "Apple", "category": "entertainment.subscriptions" },
+  { "pattern": "paypal", "merchant": "PayPal", "category": "entertainment.subscriptions" },
+  { "pattern": "\\banthropic\\b|\\bclaude\\b", "merchant": "Claude", "category": "entertainment.subscriptions" },
+  { "pattern": "\\bopenai\\b|chatgpt", "merchant": "OpenAI", "category": "entertainment.subscriptions" },
+  { "pattern": "netflix", "merchant": "Netflix", "category": "entertainment.subscriptions" },
+  { "pattern": "spotify", "merchant": "Spotify", "category": "entertainment.subscriptions" },
+  { "pattern": "youtube|\\bgoogle\\b", "merchant": "Google", "category": "entertainment.subscriptions" },
+  { "pattern": "\\bsteam\\b", "merchant": "Steam", "category": "entertainment.games" },
+  { "pattern": "easypay", "merchant": "EasyPay", "category": "housing.internet" },
+
+  { "pattern": "ки[їi]встар|kyivstar", "merchant": "Київстар", "category": "housing.internet" },
+  { "pattern": "vodafone", "merchant": "Vodafone", "category": "housing.internet" },
+  { "pattern": "lifecell", "merchant": "lifecell", "category": "housing.internet" },
+  { "pattern": "приват ?24", "merchant": "Приват24", "category": "housing.internet" },
+
+  { "pattern": "д[іi]я ?\\|? ?штраф", "merchant": "Дія | Штрафи", "category": "finance.fines" },
+
+  { "pattern": "kviti|la ?fleur|квіти|florist", "merchant": "Квіти", "category": "shopping.gifts" },
+  { "pattern": "kovpak", "merchant": "Kovpak", "category": "shopping.gifts" }
+]
