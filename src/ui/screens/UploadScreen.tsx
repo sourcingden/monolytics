@@ -1,5 +1,6 @@
 import { useCallback, useRef, useState } from 'react'
 import { useI18n } from '@/i18n'
+import { readStatementFile } from '@/core/parse/statementFile'
 import { useStore } from '@/store/useStore'
 import type { ImportOutcome } from '@/store/useStore'
 import type { ScreenProps } from '@/ui/types'
@@ -19,7 +20,7 @@ export function UploadScreen({ goTo }: ScreenProps) {
     async (fileList: FileList | null) => {
       if (!fileList || fileList.length === 0) return
       const files = await Promise.all(
-        Array.from(fileList).map(async (f) => ({ fileName: f.name, text: await f.text() })),
+        Array.from(fileList).map(async (f) => ({ fileName: f.name, text: await readStatementFile(f) })),
       )
       const results = await importFiles(files)
       setOutcomes(results)
@@ -61,7 +62,7 @@ export function UploadScreen({ goTo }: ScreenProps) {
         <input
           ref={inputRef}
           type="file"
-          accept=".csv,text/csv"
+          accept=".csv,.xls,.xlsx,text/csv"
           multiple
           className="hidden"
           onChange={(e) => void handleFiles(e.target.files)}

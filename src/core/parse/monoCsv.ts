@@ -35,9 +35,10 @@ function matchColumn(normalizedHeader: string): MonoColumn | null {
   if (h.includes('дата')) return 'date'
   if (h.includes('деталi') || h.includes('details') || h.includes('опис')) return 'description'
   if (h === 'mcc' || h.includes('mcc')) return 'mcc'
-  if (h.includes('сума') && h.includes('картки')) return 'cardAmount'
+  if (h.includes('сума') && h.includes('карт')) return 'cardAmount'
   if (h.includes('сума') && h.includes('операц')) return 'opAmount'
-  if (h === 'валюта' || h === 'currency') return 'opCurrency'
+  if (h === 'валюта' || h === 'currency' || (h.includes('валюта') && h.includes('операц')))
+    return 'opCurrency'
   if (h.includes('курс')) return 'rate'
   if (h.includes('комiс') || h.includes('commission')) return 'commission'
   if (h.includes('кешбек') || h.includes('кэшбек') || h.includes('cashback')) return 'cashback'
